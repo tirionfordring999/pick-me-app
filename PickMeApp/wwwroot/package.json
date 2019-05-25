@@ -1,8 +1,15 @@
 {
   "requires": true,
   "lockfileVersion": 1,
+  "scripts": {
+    "scss": "node-sass -watch scss -o css"
+  },
   "dependencies": {
     "angular": "^1.7.8",
+    "angular-route": "^1.7.8",
     "bootstrap": "^3.4.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0"
   }
 }

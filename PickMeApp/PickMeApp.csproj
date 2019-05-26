@@ -18,9 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\assets\sass\" />
     <Folder Include="wwwroot\src\main\" />
-    <Folder Include="wwwroot\src\home\" />
     <Folder Include="wwwroot\src\directives\" />
     <Folder Include="wwwroot\src\services\" />
   </ItemGroup>

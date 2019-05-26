@@ -1,28 +1,36 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="pick-me-app">
 
 <head>
 
     <meta charset="UTF-8">
 
     <title>PickMeApp</title>
+
     <link rel="icon" href="/assets/images/logo/icon.png">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!--libs-->
-
+    <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="/src/app.js"></script>
-
+    <script src="/src/route.js"></script>
+    <script src="/src/home/home.controller.js"></script>
 
     <base href="/">
 
 </head>
 
-<body ng-view>
-     <input type="text" ng-model="searchText" />
-            {{searchText}}
+<body>
+
+    <div ng-view class="row">
+        
+    </div>
+     
+            
 </body>
 
 </html>

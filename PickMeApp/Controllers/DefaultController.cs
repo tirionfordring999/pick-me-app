@@ -8,7 +8,7 @@ namespace PickMeApp.Controllers
 {
     public class DefaultController : Controller
     {
-        public IActionResult Index1()
+        public IActionResult Hello()
         {
             return Json(new { message = "Hello World!!" });
         }

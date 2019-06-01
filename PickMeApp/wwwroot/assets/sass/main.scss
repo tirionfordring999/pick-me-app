@@ -2,14 +2,16 @@
 @import "header/_header.scss";
 @import  "menu/_menu.scss";
 
-html, body {
+html, body, [ng-view] {
     height: 100%;
     overflow-x: hidden;
     background-color: #EBEBEB;
+    font-family: Tahoma;
 }
 
 #pageContent {
     padding-top: 75px !important;
+    height: 100%;
 }
 
 .inline-block {
@@ -43,4 +45,13 @@ html, body {
     }
 
     transition: opacity ease-in-out 0.2s;
+}
+
+::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }

@@ -1,11 +1,103 @@
 ﻿<div id="pageContent" class="home-page">
-    {{greet}}
-
-
-    <div class="col-xs-12 padding-10">
-        <input type="text" ng-model="searchText" />
+    <div class="pictureSection">
+        <div class="textLogo">
+            <h1>Looking for a driver?</h1>
+            <h1>Can pick up someone?</h1>
+            <h1><span>PickMeUp </span>then</h1>
+        </div>
+        <div class="navigation">
+            <h4>How it works</h4>
+            <button class="roundButton" type="button" ng-click="scroll()">
+                <img src="/assets/images/icons/down-arrow.png" alt="down">
+            </button>
+        </div>
     </div>
-    <div class="col-xs-12 padding-10">
-        {{searchText}}
+    <div class="explanation">
+        <div class="sectionHeader">
+            <h1>How it works</h1>
+        </div>
+        <div class="smallImgs">
+            <div class="element">
+                <h2>Driver</h2>
+                <img src="/assets/images/icons/driver.png" alt="">
+                <p>Offer a route</p>
+            </div>
+            <div class="element" id="middleElement">
+                <h2>Passenger</h2>
+                <img src="/assets/images/icons/passenger.png" alt="">
+                <p>Book a ride</p>
+            </div>
+            <div class="element">
+                <h2>Route</h2>
+                <img src="/assets/images/icons/route.png" alt="">
+                <p>Enjoy the ride!</p>
+            </div>
+        </div>
+        <div class="textParagraph">
+            <p>Just say where you're going, where you'd like to pick up, drop off passengers and when. Choose from our suggestions for popular places to pick up and drop off passengers. It makes things easier for everyone.</p>
+        </div>
+    </div>
+    <div class="rideSection">
+        <div class="resize">
+            <div class="imgContainer">
+                <img src="/assets/images/photo/driver.jpg" alt="">
+            </div>
+            <div class="description">
+                <div class="sectionHeader">
+                    <h1>Are you a driver?</h1>
+                </div>
+                <div class="sectionParagraph" id="textTrip">
+                    <p>Let’s make this the least expensive journey you’ve ever made. That's will take less than 5 minutes! Offer your ride and you'll save money and spent your ride with good company.</p>
+                </div>
+                <div class="btnContainer">
+                    <button class="btn">Offer a ride</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rideSection">
+        <div class="resize">
+            <div class="description">
+                <div class="sectionHeader">
+                    <h1>Are you a passenger?</h1>
+                </div>
+                <div class="sectionParagraph">
+                    <p>Get to your exact destination, without the hassle. Carpooling cuts out transfers, queues and the waiting around the station time. Select who you want to travel with.</p>
+                </div>
+                <div class="btnContainer">
+                    <button class="btn">Search a ride</button>
+                </div>
+            </div>
+            <div class="imgContainer">
+                <img src="/assets/images/photo/passenger.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+    <div class="statisticSection">
+        <div class="sectionHeader">
+            <h1>You will love us</h1>
+        </div>
+        <div class="textParagraph">
+            <p> Meet some numbers:</p>
+        </div>
+        <div class="numbers">
+            <div id="driversNumber" class="numbersEach">
+                <h1>312</h1>
+                <p>Drivers spent money or gas</p>
+            </div>
+            <div id="passengerNumber" class="numbersEach">
+                <h1>582</h1>
+                <p>Passengers get to work fast and safe</p>
+            </div>
+            <div id="rideNumber" class="numbersEach">
+                <h1>2014</h1>
+                <p>Rides are sucsessfully finished</p>
+            </div>
+            <div id="reviewNumber" class="numbersEach">
+                <h1>90</h1>
+                <p>Reviews are posted!</p>
+            </div>
+        </div>
     </div>
 </div>

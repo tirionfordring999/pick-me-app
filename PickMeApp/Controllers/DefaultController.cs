@@ -8,9 +8,18 @@ namespace PickMeApp.Controllers
 {
     public class DefaultController : Controller
     {
+        PickMeAppDbContext db;
+
+        public DefaultController()
+        {
+            db = new PickMeAppDbContext();
+        }
+
         public IActionResult Hello()
         {
-            return Json(new { message = "Hello World!!" });
+
+            var points = db.Points.ToList();
+            return Json(new { points = points });
         }
     }
 }

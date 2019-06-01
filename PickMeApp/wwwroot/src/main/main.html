@@ -1,0 +1,24 @@
+﻿<div class="header">
+    <div class="main-menu-icon inline-block padding-10">
+        <button class="icon-button" ng-click="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="logo inline-block">
+        <a href="#!/home">
+            <img src="/assets/images/logo/textlogo.png" alt="">
+        </a>
+    </div>
+</div>
+
+<div ng-class="{'open': menuOpened}" class="menu" id="MainMenu">
+    <div class="menu-item">
+        <button class="btn btn-primary nav-button"> Find route </button>
+    </div>
+    <div class="menu-item">
+        <button class="btn btn-primary nav-button">  Publish a route </button>
+    </div>
+    <div class="menu-item">
+        <button class="btn btn-primary nav-button"> About us </button>
+    </div>
+</div>

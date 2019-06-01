@@ -3,12 +3,69 @@
   .home-page .page-header {
     font-weight: bold; }
 
-.home-page {
-  font-size: 115px; }
-  .home-page .page-header {
-    font-weight: bold; }
+.header {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 75px;
+  padding: 5px;
+  width: 100%;
+  background-color: #E55049; }
+  .header .main-menu-icon {
+    padding: 10px;
+    float: left; }
+  .header .logo {
+    float: left;
+    padding: 10px; }
+    .header .logo img {
+      display: block;
+      height: 40px; }
 
-.home-page {
-  font-size: 115px; }
-  .home-page .page-header {
-    font-weight: bold; }
+.menu {
+  top: 75px;
+  left: -25%;
+  z-index: 3;
+  overflow-y: auto;
+  height: calc(100% - 75px);
+  width: 20%;
+  background: #FFF;
+  border: 2px solid;
+  position: absolute;
+  -webkit-transition: all 0.3s ease-out; }
+  .menu.open {
+    left: 0px; }
+  .menu .menu-item {
+    height: 40px;
+    padding: 5px; }
+    .menu .menu-item:hover {
+      background: #bdbdbd; }
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #EBEBEB; }
+
+#pageContent {
+  padding-top: 75px !important; }
+
+.inline-block {
+  display: inline-block; }
+
+.btn .btn-app {
+  background-color: #E55049; }
+
+.icon-button {
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  color: white;
+  font-size: 25px;
+  border: none;
+  border-radius: 100%;
+  transition: background-color ease-in-out 0.2s;
+  transition: opacity ease-in-out 0.2s; }
+  .icon-button:hover {
+    background-color: rgba(0, 0, 0, 0.3); }
+  .icon-button i {
+    opacity: 1; }

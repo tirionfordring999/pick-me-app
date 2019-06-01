@@ -1,3 +1,26 @@
 ﻿.menu {
+    top: 75px;
+    left: -25%;
+    z-index: 3;
+    overflow-y: auto;
+    height: calc(100% - 75px);
+    width: 20%;
+    background: #FFF;
+    border: 2px solid;
+    position: absolute;
+    -webkit-transition: all 0.3s ease-out;
 
+    &.open {
+        left: 0px;
+    }
+
+
+    .menu-item {
+        height: 40px;
+        padding: 5px;
+
+        &:hover {
+            background: #bdbdbd;
+        }
+    }
 }

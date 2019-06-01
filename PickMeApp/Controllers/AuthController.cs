@@ -20,7 +20,7 @@ namespace PickMeApp.Controllers
         [HttpPost("Login")]
         public IActionResult Login(LoginViewModel vm)
         {
-            var token = db.Users.Where(u => u.Login == vm.Login && u.Pass == vm.Pass).Select(u => u.UserId);
+            var token = db.Users.Where(u => u.Login == vm.Login && u.Pass == vm.Pass).Select(u => u.UserId).FirstOrDefault();
             return Json(new { token = token });
         }
 

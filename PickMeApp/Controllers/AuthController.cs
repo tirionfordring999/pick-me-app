@@ -9,7 +9,6 @@ using PickMeApp.ViewModel;
 namespace PickMeApp.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     public class AuthController : BaseController
     {
         PickMeAppContext db;

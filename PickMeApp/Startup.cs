@@ -37,7 +37,11 @@ namespace PickMeApp
             options.DefaultFileNames.Add("/index.html");
             app.UseDefaultFiles(options);
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("Auth", "{controller=Auth}/{action}");
+            });
 
             app.Use(async (context, next) =>
             {
@@ -49,7 +53,6 @@ namespace PickMeApp
                     await next();
                 }
             });
-
         }
     }
 }

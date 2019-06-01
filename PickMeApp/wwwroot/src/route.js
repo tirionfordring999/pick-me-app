@@ -5,9 +5,16 @@
                 templateUrl: 'src/home/home.html',
                 controller: 'HomeController'
             })
+            .when('/login', {
+                templateUrl: 'src/login/login.html',
+                controller: 'LoginController'
+            })
+            .when('/register', {
+                templateUrl: 'src/register/register.html',
+                controller: 'RegisterController'
+            })
             .otherwise({
-                redirectTo: '/home'
+                redirectTo: '#!/home'
             });
-        $locationProvider.html5Mode(true);
     }
 ]);

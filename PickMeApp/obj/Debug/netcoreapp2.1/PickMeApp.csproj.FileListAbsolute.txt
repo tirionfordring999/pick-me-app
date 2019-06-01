@@ -11,3 +11,4 @@ C:\Users\vlad\Desktop\PickMeApp\PickMeApp\bin\Debug\netcoreapp2.1\PickMeApp.pdb
 C:\Users\vlad\Desktop\PickMeApp\PickMeApp\obj\Debug\netcoreapp2.1\PickMeApp.RazorTargetAssemblyInfo.cache
 C:\Users\vlad\Desktop\PickMeApp\PickMeApp\obj\Debug\netcoreapp2.1\PickMeApp.dll
 C:\Users\vlad\Desktop\PickMeApp\PickMeApp\obj\Debug\netcoreapp2.1\PickMeApp.pdb
+C:\Users\vlad\Desktop\PickMeApp\PickMeApp\obj\Debug\netcoreapp2.1\PickMeApp.csprojAssemblyReference.cache

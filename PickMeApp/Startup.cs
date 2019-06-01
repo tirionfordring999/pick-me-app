@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using PickMeApp.Models;
 
 namespace PickMeApp
 {
@@ -16,6 +18,9 @@ namespace PickMeApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<PickMeAppContext>(options => options.UseSqlServer("Data Source=(local)\\SQLEXPRESS;Initial Catalog=PickMeApp;Integrated Security=True;"));
+            
             services.AddMvc();
         }
 
@@ -32,14 +37,6 @@ namespace PickMeApp
             options.DefaultFileNames.Add("/index.html");
             app.UseDefaultFiles(options);
             app.UseStaticFiles();
-            
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Default}/{action=Hello}");
-            });
-
             app.UseMvcWithDefaultRoute();
 
             app.Use(async (context, next) =>

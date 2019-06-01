@@ -7,20 +7,24 @@ using PickMeApp.Models;
 
 namespace PickMeApp.Controllers
 {
-    public class DefaultController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class DefaultController : BaseController
     {
         PickMeAppContext db;
 
-        public DefaultController()
+        public DefaultController(PickMeAppContext _db): base(_db)
         {
-            db = new PickMeAppContext();
+            db = _db;
         }
+
+        [HttpGet("Hello1")]
 
         public IActionResult Hello()
         {
+            var user = GetUser();
 
-
-            return Json(new { points = db.Points.ToList() });
+            return Json(new { points = db.Points.FirstOrDefault(), loggedUser = user });
         }
     }
 }

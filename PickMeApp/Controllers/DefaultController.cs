@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PickMeApp.Models;
 
 namespace PickMeApp.Controllers
 {
     public class DefaultController : Controller
     {
-        PickMeAppDbContext db;
+        PickMeAppContext db;
 
         public DefaultController()
         {
-            db = new PickMeAppDbContext();
+            db = new PickMeAppContext();
         }
 
         public IActionResult Hello()
         {
 
-            var points = db.Points.ToList();
-            return Json(new { points = points });
+
+            return Json(new { points = db.Points.ToList() });
         }
     }
 }

@@ -28,7 +28,7 @@ namespace PickMeApp.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=(local)\\SQLEXPRESS;Initial Catalog=PickMeApp;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=(local)\\SQLEXPRESS;Initial Catalog=PickMeApp;Integrated Security=True;");
             }
         }
 
@@ -87,14 +87,9 @@ namespace PickMeApp.Models
                 entity.Property(e => e.UserTo).HasColumnName("userTo");
 
                 entity.HasOne(d => d.UserFromNavigation)
-                    .WithMany(p => p.FeedbacksUserFromNavigation)
+                    .WithMany(p => p.Feedbacks)
                     .HasForeignKey(d => d.UserFrom)
                     .HasConstraintName("FK_Feedbacks_Users");
-
-                entity.HasOne(d => d.UserToNavigation)
-                    .WithMany(p => p.FeedbacksUserToNavigation)
-                    .HasForeignKey(d => d.UserTo)
-                    .HasConstraintName("FK_Feedbacks_Users1");
             });
 
             modelBuilder.Entity<Points>(entity =>

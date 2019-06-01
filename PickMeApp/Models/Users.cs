@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PickMeApp.Models
 {
@@ -9,8 +8,7 @@ namespace PickMeApp.Models
         public Users()
         {
             Cars = new HashSet<Cars>();
-            FeedbacksUserFromNavigation = new HashSet<Feedbacks>();
-            FeedbacksUserToNavigation = new HashSet<Feedbacks>();
+            Feedbacks = new HashSet<Feedbacks>();
             RouteRequest = new HashSet<RouteRequest>();
             Routes = new HashSet<Routes>();
         }
@@ -25,7 +23,7 @@ namespace PickMeApp.Models
         public string Login { get; set; }
 
         public ICollection<Cars> Cars { get; set; }
-        public ICollection<Feedbacks> FeedbacksUserFromNavigation { get; set; }
+        public ICollection<Feedbacks> Feedbacks { get; set; }
         public ICollection<RouteRequest> RouteRequest { get; set; }
         public ICollection<Routes> Routes { get; set; }
     }

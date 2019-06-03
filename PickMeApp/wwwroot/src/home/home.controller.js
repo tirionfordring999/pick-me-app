@@ -1,10 +1,10 @@
 ﻿angular.module('pick-me-app').controller('HomeController', ['$scope', 'AuthService', '$location', function ($scope, AuthService, $location) {
-    $scope.greet = AuthService.user.token || 'Hello!';
 
 
+    $scope.scroll = function () {
 
+        setTimeout();
 
-    if (!AuthService.user.token) {
-        $location.path('/login');
     }
+
 }]);

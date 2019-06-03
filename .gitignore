@@ -5,3 +5,5 @@
 /.vs
 /PickMeApp/wwwroot/node_modules
 obj
+/PickMeApp/bin
+/PickMeApp/obj

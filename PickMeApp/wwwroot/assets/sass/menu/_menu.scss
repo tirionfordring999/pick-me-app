@@ -1,10 +1,10 @@
 ﻿.menu {
     top: 75px;
-    left: -25%;
+    left: -200px;
     z-index: 3;
     overflow-y: auto;
     height: calc(100% - 75px);
-    width: 20%;
+    width: 200px;
     background: #FFF;
     border: 2px solid;
     position: absolute;
@@ -12,6 +12,7 @@
 
     &.open {
         left: 0px;
+        box-shadow: 100px 0 36px 0px rgba(0,0,0,0.28) !important;
     }
 
 

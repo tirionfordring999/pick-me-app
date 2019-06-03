@@ -4,8 +4,11 @@
         height: 100%;
         background: url('/assets/images/fon/bgFon1.jpg') no-repeat center center;
         width: 100%;
-        display: flex;
-        flex-direction: column;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
     }
 
     .textLogo {
@@ -278,5 +281,4 @@
         justify-content: center;
         align-items: center;
     }
-    
 }

@@ -1,6 +1,8 @@
 ﻿@import "home/_home.scss";
 @import "header/_header.scss";
 @import  "menu/_menu.scss";
+@import "default.scss";
+
 
 html, body, [ng-view] {
     height: 100%;

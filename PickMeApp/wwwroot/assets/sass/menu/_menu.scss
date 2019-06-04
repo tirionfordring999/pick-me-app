@@ -12,16 +12,14 @@
 
     &.open {
         left: 0px;
-        box-shadow: 100px 0 36px 0px rgba(0,0,0,0.28) !important;
     }
-
 
     .menu-item {
         height: 40px;
         padding: 5px;
 
         &:hover {
-            background: #bdbdbd;
+            background: #e4dcdc;
         }
     }
 }

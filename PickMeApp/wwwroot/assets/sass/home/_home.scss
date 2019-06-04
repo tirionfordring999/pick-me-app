@@ -7,13 +7,14 @@
         -o-background-size: cover;
         background-size: cover;
         overflow: hidden;
+        padding-top: 20%;
     }
 
     .section {
         height: 100%;
         width: 100%;
         background-color: #FFF;
-        margin:auto;
+        margin: auto;
     }
 
     .textLogo {
@@ -52,78 +53,71 @@
         outline: none;
     }
 
+
+    .info-section {
+
+        .row {
+            padding: 30px 20px;
+        }
+
+        img {
+            max-width: 80%;
+            width: auto;
+            height: auto;
+            max-height: 330px;
+            min-height: 200px;
+        }
+
+        .btnContainer {
+            text-align: center;
+        }
+    }
+
+
     .navigation {
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
         align-items: center;
         flex-grow: 1;
+
+        h4 {
+            font-family: Tahoma;
+            font-size: 1.2em;
+            font-weight: 900;
+            color: #FFF;
+        }
+
+        button {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .explanation {
+            background-color: #FFF;
+            height: 350px;
+            border-bottom: 3px solid #EBEBEB;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
-    .navigation > h4 {
-        font-family: Tahoma;
-        font-size: 1.2em;
-        font-weight: 900;
-        color: #FFF;
-    }
-
-    .navigation > button {
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-        cursor: pointer;
-    }
-
-    .explanation {
-        background-color: #FFF;
-        height: 350px;
-        border-bottom: 3px solid #EBEBEB;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .sectionHeader {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-grow: 1;
-    }
-
-    .sectionHeader > h1 {
+    h1 {
         font-family: Tahoma;
         font-size: 2em;
         color: #000000;
         font-weight: 700;
     }
 
-    .smallImgs {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: row;
-        align-items: space-around;
-        justify-content: center;
-        width: 50%;
-    }
-
     .element {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
         min-width: 150px;
     }
 
-    .element > h2 {
-        font-family: Tahoma;
-        font-size: 1.4em;
-        font-weight: 900;
-        color: #000;
-    }
-
-    .element > p {
+    p {
         font-family: Tahoma;
         font-size: 1.1em;
         font-weight: 500;
@@ -131,159 +125,16 @@
     }
 
     .textParagraph {
-        flex-grow: 1;
         font-size: 1.2em;
         font-family: Tahoma;
         color: #757575;
         width: 80%;
-        display: flex;
-        align-items: center;
     }
 
     .sectionParagraph {
-        flex-grow: 1;
         font-size: 1.2em;
         font-family: Tahoma;
         color: #757575;
-        width: 90%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
         padding-right: 10%;
-    }
-
-    #middleElement {
-        border-right: 2px solid #EBEBEB;
-        border-left: 2px solid #EBEBEB;
-    }
-
-    .rideSection {
-        background-color: #FFF;
-        height: 350px;
-        width: 100%;
-        border-bottom: 3px solid #EBEBEB;
-    }
-
-    .resize {
-        width: 80%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .imgContainer {
-        height: 330px;
-        width: 40%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .imgContainer > img {
-        max-width: 100%;
-        width: auto;
-        height: auto;
-        max-height: 330px;
-        min-height: 200px;
-    }
-
-    .description {
-        height: 350px;
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #textTrip {
-        padding-left: 10%;
-        padding-right: 0;
-    }
-
-    .btnContainer {
-        flex-grow: 1;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .btn {
-        height: 40px;
-        border: none;
-        width: 200px;
-        border-radius: 30px;
-        background: linear-gradient(to bottom left, #E55049, #E57F49);
-        color: #fff;
-        transition: none;
-        cursor: pointer;
-        outline: none;
-    }
-
-    .statisticSection {
-        background-color: #FFF;
-        height: 330px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .numbers {
-        flex-grow: 2;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .numbersEach {
-        width: 100px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 20px;
-    }
-
-    .numbersEach > h1 {
-        font-family: Tahoma;
-        color: #E54E49;
-        font-size: 2.2em;
-    }
-
-    .numbersEach > p {
-        margin-top: 10px;
-        font-family: Tahoma;
-        color: #000;
-        text-align: center;
-    }
-
-    footer {
-        background: linear-gradient(to bottom left, #E55049, #E57F49);
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: 50px;
-        width: 100%;
-        justify-content: center;
-    }
-
-    footer > h3 {
-        color: #FFF;
-        font-family: Tahoma;
-        font-weight: 400;
-    }
-
-    footer > a {
-        margin-left: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }

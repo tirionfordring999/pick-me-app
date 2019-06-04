@@ -1,10 +1,8 @@
-﻿angular.module('pick-me-app').controller('HomeController', ['$scope', 'AuthService', '$location', function ($scope, AuthService, $location) {
-
+﻿angular.module('pick-me-app').controller('HomeController', ['$scope', 'AuthService', '$location', '$anchorScroll', function ($scope, AuthService, $location, $anchorScroll) {
 
     $scope.scroll = function () {
-
-        setTimeout();
-
+        $location.hash('bottom');
+        $anchorScroll();
     }
 
 }]);

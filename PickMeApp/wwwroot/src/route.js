@@ -13,6 +13,10 @@
                 templateUrl: 'src/register/register.html',
                 controller: 'RegisterController'
             })
+            .when('/profile', {
+                templateUrl: 'src/profile/profile.html',
+                controller: 'ProfileController'
+            })
             .otherwise({
                 redirectTo: '#!/home'
             });

@@ -1,11 +1,28 @@
-﻿<div id="pageContent" class="home-page container-fluid">
-    {{greet}}
-
-
-    <div class="col-xs-12 padding-10">
-        <input type="text" ng-model="searchText" />
+﻿<div id="pageContent" class="register-page">
+    <div ng-if="step === 1">
+        <div ng-if="error"> {{error}} </div>
+        <div class="col-xs-12 padding-10">
+            login <input type="text" ng-model="login" />
+        </div>
+        <div class="col-xs-12 padding-10">
+            pass <input type="text" ng-model="pass" />
+        </div>
+        <div class="col-xs-12 padding-10">
+            Reenter pass <input type="text" ng-model="passCheck" />
+        </div>
     </div>
-    <div class="col-xs-12 padding-10">
-        {{searchText}}
+
+    <div ng-if="step === 2">
+        <div class="col-xs-12 padding-10">
+            FullName <input type="text" ng-model="fullname" />
+        </div>
+        <div class="col-xs-12 padding-10">
+            Phone <input type="text" ng-model="phone" />
+        </div>
+    </div>
+
+    <div ng-if="step === 3">
+        Complete registration in profile, thanks
+
     </div>
 </div>

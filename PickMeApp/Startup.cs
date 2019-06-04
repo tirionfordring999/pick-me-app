@@ -41,6 +41,7 @@ namespace PickMeApp
             app.UseMvc(routes =>
             {
                 routes.MapRoute("Auth", "{controller=Auth}/{action}");
+                routes.MapRoute("Profile", "{controller=Profile}/{action}");
             });
 
             app.Use(async (context, next) =>

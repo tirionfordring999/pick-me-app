@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PickMeApp.Models;
 
 namespace PickMeApp.Controllers
@@ -21,7 +22,7 @@ namespace PickMeApp.Controllers
 
         public Users GetUser()
         {
-            var token = HttpContext.Response.Headers["token"];
+            var token = Convert.ToInt32(HttpContext.Request.Headers["Authorization"]);
             return db.Users.Where(u => u.UserId == token).FirstOrDefault();
         }
 

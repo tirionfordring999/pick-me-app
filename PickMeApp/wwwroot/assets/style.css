@@ -563,6 +563,126 @@
 .no-outline {
   outline: 0; }
 
+.login-page {
+  background: #FFF; }
+  .login-page .left-block {
+    height: 100%; }
+    .login-page .left-block .login-header {
+      text-align: center;
+      height: 30%; }
+      .login-page .left-block .login-header h1 {
+        letter-spacing: 2px;
+        font-family: Tahoma;
+        font-size: 32px;
+        font-weight: 100; }
+    .login-page .left-block .login-form {
+      height: 70%;
+      padding: 10% 10px; }
+      .login-page .left-block .login-form .btn-strip {
+        text-align: center; }
+  .login-page .photo {
+    height: 100%;
+    padding: 0; }
+    .login-page .photo div {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-size: cover;
+      background: url("/assets/images/fon/background.jpg") no-repeat left top; }
+  .login-page .red-text {
+    color: #E64E49; }
+
+.profile-page .profile-info {
+  width: 93%;
+  margin: 30px auto;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  padding: 15px;
+  height: 90%; }
+  .profile-page .profile-info .profile-header {
+    text-align: center;
+    padding-bottom: 25px;
+    height: 15%; }
+    .profile-page .profile-info .profile-header h1 {
+      color: #707070;
+      font-family: Tahoma; }
+    .profile-page .profile-info .profile-header .edit-link {
+      font-size: 20px;
+      color: #E55049;
+      text-align: right; }
+  .profile-page .profile-info .profile-content {
+    text-align: center;
+    height: 70%; }
+    .profile-page .profile-info .profile-content .photo {
+      margin: auto;
+      text-align: center;
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      background-color: yellow;
+      padding: 70px; }
+      .profile-page .profile-info .profile-content .photo i {
+        font-size: 50px;
+        text-align: center; }
+    .profile-page .profile-info .profile-content .user-name {
+      font-family: Tahoma;
+      letter-spacing: 2px;
+      font-size: 2.2em;
+      font-weight: 100; }
+    .profile-page .profile-info .profile-content .user-ride {
+      font-family: Tahoma;
+      letter-spacing: 1px;
+      font-size: 1.5em;
+      font-weight: 100;
+      color: #707070; }
+
+.profile-page .section {
+  width: 93%;
+  margin: 30px auto;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  height: 50%;
+  padding: 15px; }
+  .profile-page .section .left-text-header {
+    color: #707070;
+    font-family: Tahoma; }
+  .profile-page .section .section-content .oops-text {
+    font-family: Tahoma;
+    font-size: 20px;
+    color: #707070; }
+    .profile-page .section .section-content .oops-text .small-link {
+      color: #E55049;
+      text-decoration: underline; }
+
+.register-page {
+  background: #FFF; }
+  .register-page .left-block {
+    height: 100%; }
+    .register-page .left-block .register-header {
+      text-align: center;
+      height: 25%; }
+      .register-page .left-block .register-header h1 {
+        letter-spacing: 2px;
+        font-family: Tahoma;
+        font-size: 32px;
+        font-weight: 100; }
+    .register-page .left-block .register-form {
+      height: 70%;
+      padding: 10% 10px; }
+      .register-page .left-block .register-form .btn-strip {
+        text-align: center; }
+  .register-page .photo {
+    height: 100%;
+    padding: 0; }
+    .register-page .photo div {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-size: cover;
+      background: url("/assets/images/fon/background.jpg") no-repeat left top; }
+  .register-page .red-text {
+    color: #E64E49; }
+
 html, body, [ng-view] {
   height: 100%;
   overflow-x: hidden;
@@ -587,9 +707,15 @@ html, body, [ng-view] {
   cursor: pointer;
   outline: none !important; }
   .btn.btn-app:hover {
-    color: black; }
+    color: black;
+    background-color: #E57F49; }
   .btn.btn-app:active {
-    color: #fff; }
+    color: #fff;
+    background-color: #E57F49; }
+
+.preloader {
+  text-align: center;
+  padding-top: 33%; }
 
 .icon-button {
   outline: none;
@@ -606,6 +732,51 @@ html, body, [ng-view] {
     background-color: rgba(0, 0, 0, 0.3); }
   .icon-button i {
     opacity: 1; }
+
+.app-text-box {
+  border-radius: 33px;
+  border: 2px #c3c3c3 solid;
+  margin: 10px;
+  overflow: hidden;
+  padding: 5px; }
+  .app-text-box input {
+    font-size: 18px;
+    border: none;
+    background: transparent;
+    width: 100%;
+    padding: 0 25px;
+    outline: none;
+    margin-bottom: 5px;
+    border-radius: 20px; }
+  .app-text-box p {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 25px;
+    width: 100%;
+    font-size: 16px;
+    font-family: Tahoma;
+    color: #c3c3c3; }
+
+.app-input-box {
+  border-bottom: 2px #c3c3c3 solid;
+  margin: 10px;
+  text-align: left; }
+  .app-input-box input {
+    font-size: 18px;
+    border: none;
+    background: transparent;
+    width: 100%;
+    padding: 0 25px;
+    outline: none;
+    margin-bottom: 5px;
+    border-radius: 20px; }
+  .app-input-box p {
+    color: #c3c3c3;
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 100%;
+    font-size: 16px;
+    font-family: Tahoma; }
 
 ::-webkit-scrollbar {
   width: 0px;

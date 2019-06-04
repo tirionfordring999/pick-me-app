@@ -1,13 +1,39 @@
-﻿<div id="pageContent" class="home-page container-fluid">
-    {{greet}}
-
-
-    <div class="col-xs-12 padding-10">
-        <input type="text" ng-model="searchText" />
+﻿<div class="login-page" id="pageContent">
+    <div class="col-xs-12 col-sm-6 left-block">
+        <div class="login-header padding-top-20">
+            <h1>Welcome back!</h1>
+            <h1>We've missed you!</h1>
+        </div>
+        <div class="login-form">
+            <div class="app-text-box">
+                <p> Email adress </p>
+                <input type="text" name="" ng-model="username" ng-change="onModelChange()"/>
+            </div>
+            <div class="app-text-box">
+                <p> Password </p>
+                <input type="password" replace="." name="" ng-model="password" ng-change="onModelChange()"/>
+            </div>
+            <div class="btn-strip">
+                <div>
+                    <button class="btn btn-app" ng-click="login()">
+                        Log in
+                    </button>
+                </div>
+                <div>
+                    <p>
+                        Don't have an account?
+                        <span id="redText">
+                            <a href="#!/register"> Sign up</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div ng-if="error" class="alert alert-danger">
+                <strong>{{error}}</strong>
+            </div>
+        </div>
     </div>
-    <div class="col-xs-12 padding-10">
-        {{searchText}}
+    <div class="hidden-xs col-sm-6 photo">
+        <div></div>
     </div>
-
-    <button class="btn btn-primary" ng-click="login()"> Login </button>
 </div>

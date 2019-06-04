@@ -1,0 +1,91 @@
+﻿.profile-page {
+
+    .profile-info {
+        width: 93%;
+        margin: 30px auto;
+        background-color: #FFFFFF;
+        border-radius: 30px;
+        padding: 15px;
+        height: 90%;
+
+        .profile-header {
+            text-align: center;
+            padding-bottom: 25px;
+            height: 15%;
+
+            h1 {
+                color: #707070;
+                font-family: Tahoma;
+            }
+
+            .edit-link {
+                font-size: 20px;
+                color: #E55049;
+                text-align: right;
+            }
+        }
+
+        .profile-content {
+            text-align: center;
+            height: 70%;
+
+            .photo {
+                margin: auto;
+                text-align: center;
+                width: 200px;
+                height: 200px;
+                border-radius: 100px;
+                background-color: yellow;
+                padding: 70px;
+
+                i {
+                    font-size: 50px;
+                    text-align: center;
+                }
+            }
+
+            .user-name {
+                font-family: Tahoma;
+                letter-spacing: 2px;
+                font-size: 2.2em;
+                font-weight: 100;
+            }
+
+            .user-ride {
+                font-family: Tahoma;
+                letter-spacing: 1px;
+                font-size: 1.5em;
+                font-weight: 100;
+                color: #707070;
+            }
+        }
+    }
+
+    .section {
+        width: 93%;
+        margin: 30px auto;
+        background-color: #FFFFFF;
+        border-radius: 30px;
+        height: 50%;
+        padding: 15px;
+
+        .left-text-header {
+            color: #707070;
+            font-family: Tahoma;
+        }
+
+        .section-content {
+
+            .oops-text {
+                font-family: Tahoma;
+                font-size: 20px;
+                color: #707070;
+
+                .small-link {
+                    color: #E55049;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

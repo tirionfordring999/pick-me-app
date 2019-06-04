@@ -14,13 +14,17 @@
         return $http.post('api/Auth/Register', data).then(handleSuccess, handleError);
     }
 
+    service.ValidateLogin = function (data) {
+
+        return $http.post('api/Auth/ValidateLogin', data).then(handleSuccess, handleError);
+    }
 
     function handleSuccess(response) {
         return response.data;
     }
 
     function handleError(response) {
-        FlashService.Error(response.error);
+       console.log(response.error);
     }
     return service;
 

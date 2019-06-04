@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\assets\sass\images\" />
     <Folder Include="wwwroot\src\directives\" />
   </ItemGroup>
 

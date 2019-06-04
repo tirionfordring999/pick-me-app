@@ -1,0 +1,69 @@
+﻿<div ng-if="loaded" id="pageContent" class="profile-page">
+    <div class="profile-info">
+        <div class="profile-header">
+            <h1>Personal information</h1>
+            <a ng-show="!EditMode" class="edit-link" id="" href="" ng-click="EditMode = !EditMode">Edit</a>
+        </div>
+        <div ng-show="!EditMode" class="profile-content">
+            <div class="text-section row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="user-name">{{user.firstName}}, {{user.age}}</div>
+                    <div class="user-ride">20 rides, 10 as driver</div>
+                </div>
+            </div>
+        </div>
+        <div ng-show="EditMode" class="profile-content text-center">
+            <div class="text-section row text-center">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="app-input-box">
+                        <p> Full name </p>
+                        <input type="text" name="" ng-model="user.firstName" ng-change="onModelChange()">
+                    </div>
+                    <div class="app-input-box">
+                        <p> Birth date </p>
+                        <input type="text" uib-datepicker-popup is-open="datepickerOpened" ng-click="datepickerOpened = !datepickerOpened" ng-model="user.birthDate" ng-required="true" />
+                    </div>
+                    <button class="btn btn-app" ng-click="EditMode = !EditMode"> Save </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="section">
+        <h1 class="left-text-header">Offered rides</h1>
+        <div class="section-content">
+            <p class="oops-text">Ooops...You haven't offered any rides yet <a class="small-link" href="">Offer a ride</a></p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1 class="left-text-header">Offered rides</h1>
+        <div class="section-content">
+            <p class="oops-text">Ooops...You haven't offered any rides yet <a class="small-link" href="">Offer a ride</a></p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1 class="left-text-header">Reviews</h1>
+        <div class="section-content">
+            <p class="oops-text">Ooops...You don't have any reviews <a class="small-link" href=""> Offer a ride</a> or <a class="small-link" href="">Book a ride</a></p>
+        </div>
+    </div>
+</div>
+
+<div ng-if="!loaded" class="preloader">
+    <object type="image/svg+xml"
+            data="assets/preloader.svg">
+    </object>
+</div>

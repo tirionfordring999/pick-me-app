@@ -2,7 +2,9 @@
 @import "header/_header.scss";
 @import  "menu/_menu.scss";
 @import "default.scss";
-
+@import "login/_login.scss";
+@import "profile/_profile.scss";
+@import "register/_register.scss";
 
 html, body, [ng-view] {
     height: 100%;
@@ -23,7 +25,6 @@ html, body, [ng-view] {
 .btn {
 
     &.btn-app {
-
         height: 40px;
         border: none;
         width: 200px;
@@ -36,12 +37,19 @@ html, body, [ng-view] {
 
         &:hover {
             color: black;
+            background-color: #E57F49;
         }
 
         &:active {
             color: #fff;
+            background-color: #E57F49;
         }
     }
+}
+
+.preloader {
+    text-align: center;
+    padding-top: 33%;
 }
 
 
@@ -67,9 +75,65 @@ html, body, [ng-view] {
     transition: opacity ease-in-out 0.2s;
 }
 
+.app-text-box {
+    border-radius: 33px;
+    border: 2px #c3c3c3 solid;
+    margin: 10px;
+    overflow: hidden;
+    padding: 5px;
+    
+    input {
+        font-size: 18px;
+        border: none;
+        background: transparent;
+        width: 100%;
+        padding: 0 25px;
+        outline: none;
+        margin-bottom: 5px;
+        border-radius: 20px;
+    }
+
+
+    p {
+        margin: 0;
+        margin-top: 10px;
+        margin-left: 25px;
+        width: 100%;
+        font-size: 16px;
+        font-family: Tahoma;
+        color: #c3c3c3;
+    }
+}
+
+.app-input-box {
+    border-bottom: 2px #c3c3c3 solid;
+    margin: 10px;
+    text-align: left;
+
+    input {
+        font-size: 18px;
+        border: none;
+        background: transparent;
+        width: 100%;
+        padding: 0 25px;
+        outline: none;
+        margin-bottom: 5px;
+        border-radius: 20px;
+    }
+
+    p {
+        color: #c3c3c3;
+        margin-top: 10px;
+        margin-left: 20px;
+        width: 100%;
+        font-size: 16px;
+        font-family: Tahoma;
+    }
+}
+
 ::-webkit-scrollbar {
-    width: 0px; 
-    background: transparent; 
+    width: 0px;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -206,9 +206,7 @@ namespace PickMeApp.Models
             {
                 entity.HasKey(e => e.UserId);
 
-                entity.Property(e => e.UserId)
-                    .HasColumnName("userId")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.UserId).HasColumnName("userId");
 
                 entity.Property(e => e.Bio)
                     .HasColumnName("bio")

@@ -42,6 +42,7 @@ namespace PickMeApp
             {
                 routes.MapRoute("Auth", "{controller=Auth}/{action}");
                 routes.MapRoute("Profile", "{controller=Profile}/{action}");
+                routes.MapRoute("Ride", "{controller=Ride}/{action}");
             });
 
             app.Use(async (context, next) =>

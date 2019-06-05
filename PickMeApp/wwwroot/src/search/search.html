@@ -22,6 +22,13 @@
             <p> End: </p>
             <input type="text" ng-model="endPoint.place" uib-typeahead="name for point in points | filter:$viewValue | limitTo:5">
         </div>
+
+
+        <div class="col-xs-offset-2 col-xs-6 app-input-box">
+            <p> Count of seats: </p>
+            <input type="number" ng-model="seats" />
+        </div>
+
         <div class="btn-strip">
             <div>
                 <button class="btn btn-app" ng-click="search()">

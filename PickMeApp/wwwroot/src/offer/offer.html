@@ -1,57 +1,76 @@
-﻿<div ng-if="loaded" id="pageContent" class="profile-page">
-    <div class="profile-info">
-        <div class="profile-header">
-            <h1>Personal information</h1>
-            <a class="editLink" id="" href="">Edit</a>
+﻿<div ng-if="loaded" id="pageContent" class="offer-page">
+
+    <div ng-show="step === 1">
+        <div class="content-header"> Add info about your ride</div>
+        <div class="app-input-box">
+            <p>Choose a date</p>
+            <input type="text" uib-datepicker-popup is-open="datepickerOpened" ng-click="datepickerOpened = !datepickerOpened" ng-model="birthDate" ng-required="true" />
         </div>
-        <div class="profile-content">
-            <div class="photo-section">
-                <div class="photo">
-                    <img src="/assets/images/photo/user.png" alt="" id="profileimg">
-                </div>
-                <div class="photoLinks">
-                    <a ng-click="uploadphoto()">Edit photo</a>
-                    <input id="loadFile" class="hidden" type="file">
-                    <a ui-sref="pick-up-me-app.login" ng-click="logout()">Log out</a>
+
+        <div class="app-input-box">
+            <p>Choose a time</p>
+            <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="1" minute-step="1" />
+        </div>
+
+        <div ng-if="cars && cars.length !== 0" class="app-input-box">
+            <p>Pick you car</p>
+            <input uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" />
+        </div>
+        <div class="btn-strip">
+            <div>
+                <button class="btn btn-app" ng-click="goToStep2()">
+                    Next <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div ng-show="step === 2">
+        <div class="content-header"> Add points to route</div>
+        <div class="content">
+            buttons + and -
+            <div class="col-xs-offset-2 col-xs-6 app-input-box">
+                <p>Place</p>
+                <input type="text" ng-model="routePoint.place" uib-typeahead="name for point in points | filter:$viewValue | limitTo:5">
+            </div>
+            <div class="col-xs-offset-2 col-xs-2 app-input-box">
+                <p>Price</p>
+                <input type="text" ng-model="routePoint.price" >
+            </div>
+            <div class="btn-strip">
+                <div>
+                    <button class="btn btn-app" ng-click="goToStep3()">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
-            <div class="text-section">
-                <div class="listInfo">
-                    <ul>
-                        <li>Name:  </li>
-                        <li>Age:</li>
-                        <li>Phone:</li>
-                        <li>Driver License:</li>
-                    </ul>
-                </div>
-                <div class="inputtedListInfo">
-                    <ul>
-                        <li>{{info.firstname}} {{info.lastname}}</li>
-                        <li>{{info.age}}</li>
-                        <li>{{info.phoneNumber}}</li>
-                    </ul>
+
+        </div>
+    </div>
+    <div ng-show="step === 3">
+        <div class="content-header"> Check all before publishing </div>
+        <div class="content">
+
+            ALL INFO
+
+            <div class="btn-strip">
+                <div>
+                    <button class="btn btn-app" ng-click="goToStep4()">
+                        Publish
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-    <section id="offeredRides">
-        <h1 class="leftTextHeader">Offered rides</h1>
-        <div class="sectionContent">
-            <p id="bookedRideText" class="oopsText">Ooops...You haven't offered any rides yet <a class="smallLink" href="">Offer a ride</a></p>
+    <div ng-show="step === 4">
+        <div class="content-header"> What now? </div>
+        <div class="content">
+
+            <p> Now wait for passengers make ride requests and approw it under My Rides tab</p>
         </div>
-    </section>
-    <section id="bookedRides">
-        <h1 class="leftTextHeader">Booked rides</h1>
-        <div class="sectionContent">
-            <p id="bookedRideText" class="oopsText">Ooops...You haven't booked any rides yet <a class="smallLink" href=""> Book a ride</a>	</p>
-        </div>
-    </section>
-    <section id="reviews">
-        <h1 class="leftTextHeader">Reviews</h1>
-        <div class="sectionContent">
-            <p id="bookedRideText" class="oopsText">Ooops...You don't have any reviews <a class="smallLink" href=""> Offer a ride</a> or <a class="smallLink" href="">Book a ride</a></p>
-        </div>
-    </section>
+        
+    </div>
+
+
 </div>
 
 <div ng-if="!loaded" class="preloader">

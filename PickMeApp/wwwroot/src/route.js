@@ -17,8 +17,20 @@
                 templateUrl: 'src/profile/profile.html',
                 controller: 'ProfileController'
             })
+            .when('/offer', {
+                templateUrl: 'src/offer/offer.html',
+                controller: 'OfferController'
+            })
+            .when('/search', {
+                templateUrl: 'src/search/search.html',
+                controller: 'SearchController'
+            })
+            .when('/searchresults', {
+                templateUrl: 'src/searchresults/searchresults.html',
+                controller: 'SearchResultsController'
+            })
             .otherwise({
-                redirectTo: '#!/home'
+                redirectTo: '/home'
             });
     }
 ]);

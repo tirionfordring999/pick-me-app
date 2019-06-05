@@ -1,57 +1,7 @@
 ﻿<div ng-if="loaded" id="pageContent" class="profile-page">
     <div class="profile-info">
-        <div class="profile-header">
-            <h1>Personal information</h1>
-            <a class="editLink" id="" href="">Edit</a>
-        </div>
-        <div class="profile-content">
-            <div class="photo-section">
-                <div class="photo">
-                    <img src="/assets/images/photo/user.png" alt="" id="profileimg">
-                </div>
-                <div class="photoLinks">
-                    <a ng-click="uploadphoto()">Edit photo</a>
-                    <input id="loadFile" class="hidden" type="file">
-                    <a ui-sref="pick-up-me-app.login" ng-click="logout()">Log out</a>
-                </div>
-            </div>
-            <div class="text-section">
-                <div class="listInfo">
-                    <ul>
-                        <li>Name:  </li>
-                        <li>Age:</li>
-                        <li>Phone:</li>
-                        <li>Driver License:</li>
-                    </ul>
-                </div>
-                <div class="inputtedListInfo">
-                    <ul>
-                        <li>{{info.firstname}} {{info.lastname}}</li>
-                        <li>{{info.age}}</li>
-                        <li>{{info.phoneNumber}}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
     </div>
-    <section id="offeredRides">
-        <h1 class="leftTextHeader">Offered rides</h1>
-        <div class="sectionContent">
-            <p id="bookedRideText" class="oopsText">Ooops...You haven't offered any rides yet <a class="smallLink" href="">Offer a ride</a></p>
-        </div>
-    </section>
-    <section id="bookedRides">
-        <h1 class="leftTextHeader">Booked rides</h1>
-        <div class="sectionContent">
-            <p id="bookedRideText" class="oopsText">Ooops...You haven't booked any rides yet <a class="smallLink" href=""> Book a ride</a>	</p>
-        </div>
-    </section>
-    <section id="reviews">
-        <h1 class="leftTextHeader">Reviews</h1>
-        <div class="sectionContent">
-            <p id="bookedRideText" class="oopsText">Ooops...You don't have any reviews <a class="smallLink" href=""> Offer a ride</a> or <a class="smallLink" href="">Book a ride</a></p>
-        </div>
-    </section>
 </div>
 
 <div ng-if="!loaded" class="preloader">

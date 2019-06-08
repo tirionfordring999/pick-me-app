@@ -4,8 +4,12 @@
 
     service.user = {};
 
-    service.GetData = function () {
-        return $http.get('api/Profile/GetData').then(handleSuccess, handleError);
+    service.GetPoints = function () {
+        return $http.get('api/Ride/Points').then(handleSuccess, handleError);
+    }
+
+    service.SearchRides = function (data) {
+        return $http.post('api/Ride/SearchRides', data).then(handleSuccess, handleError);
     }
 
     function handleSuccess(response) {

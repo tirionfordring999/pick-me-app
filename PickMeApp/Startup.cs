@@ -21,7 +21,7 @@ namespace PickMeApp
 
             services.AddDbContext<PickMeAppContext>(options => options.UseSqlServer("Data Source=(local)\\SQLEXPRESS;Initial Catalog=PickMeApp;Integrated Security=True;"));
             
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options => { options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore; });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -42,7 +42,11 @@
             </div>
             <div class="app-input-box">
                 <p> Birth date </p>
-                <input type="text" uib-datepicker-popup is-open="datepickerOpened" ng-click="datepickerOpened = !datepickerOpened" ng-model="birthDate" ng-required="true"  />
+                <input type="text" uib-datepicker-popup is-open="datepickerOpened" ng-click="datepickerOpened = !datepickerOpened" ng-model="birthDate" ng-required="true" />
+            </div>
+            <div class="app-input-box">
+                <p> Phone number </p>
+                <input type="text" name="" ng-model="phone" ng-change="onModelChange()">
             </div>
             <div class="btn-strip">
                 <div>

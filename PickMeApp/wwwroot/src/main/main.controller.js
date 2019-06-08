@@ -8,11 +8,16 @@
 
     AuthService.user.token = $cookies.get('token');
     $scope.user = AuthService.user;
+    $http.defaults.headers.common.Authorization = AuthService.user.token;
 
     $scope.openProfile = function () {
         if ($scope.user && $scope.user.token) {
             $location.path('/profile');
         }
+    }
+
+    $scope.goTo = function (path) {
+        $location.path('/' + path);
     }
 
     $scope.logout = function () {

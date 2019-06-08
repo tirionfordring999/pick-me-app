@@ -12,6 +12,7 @@ namespace PickMeApp.Models
         }
 
         public int RouteId { get; set; }
+        public TimeSpan? TimeOfRoute { get; set; }
         public DateTime? DateOfRoute { get; set; }
         public string PreferencesAtRide { get; set; }
         public int? NumberOfSeats { get; set; }

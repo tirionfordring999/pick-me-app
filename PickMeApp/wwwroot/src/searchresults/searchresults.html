@@ -1,15 +1,42 @@
-﻿<div ng-if="loaded" id="pageContent" class="profile-page">
-    <div class="content-header">
-        Search results for:
-        params of search, parse from query?
-    </div>
+﻿<div ng-if="loaded" id="pageContent" class="searchresults-page">
     <div class="content">
+        <div ng-if="rides.length === 0 ">
+            Sorry, but there are no rides for current search,
+            try change place or time 
+        </div>
+        <div ng-repeat="ride in rides" class="ride-item">
+            <div class="row section">
+                <div class="col-xs-6">
+                    <h3 class="left-text-header col-xs-12 margin-0">{{ride.startPoint.pointName}} - {{ride.endPoint.pointName}}</h3>
+                    <h4 class="left-text-header col-xs-12 margin-top-0">{{ride.date}}, {{ride.time}}</h4>
+                    <div class="points">
+                        <div ng-repeat="point in ride.points">
+                            <div class="point" ng-class="{'highlight':point.pointId === point.startPoint.pointId || point.pointId === point.endPoint.pointId }">
+                                <div class="col-xs-2 padding-0">
+                                    <i ng-if="!(point.pointId === point.startPoint.pointId || point.pointId === point.endPoint.pointId)" class="fas fa-ellipsis-v"></i>
+                                    <i ng-if="point.pointId === point.startPoint.pointId || point.pointId === point.endPoint.pointId" class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="col-xs-10 padding-0">
+                                    {{point.pointName}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 info">
 
-        <div class="ride-item"></div>
+                    <div class="col-xs-12 price"> <i class="fas fa-hryvnia"></i> {{ride.price}} </div>
 
-        <div class="ride-item"></div>
+                    <div class="col-xs-12 driver"> {{ride.driver.firstName}}, {{calculateAge(ride.driver.birthDate)}} </div>
 
-        <div class="ride-item"></div>
+                </div>
+                <button class="col-xs-4 btn btn-app pull-right" ng-click="bookRide(ride)">
+                    Book <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+           
+        </div>
+
 
     </div>
 </div>

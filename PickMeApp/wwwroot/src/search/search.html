@@ -1,35 +1,33 @@
-﻿<div ng-if="loaded" id="pageContent" class="profile-page">
+﻿<div ng-if="loaded" id="pageContent" class="search-page">
     <div class="content-header">
-        select date, time, start and end points
+        <h1>
+            Select date, time
+            <br>
+            start and end point
+        </h1> 
     </div>
     <div class="content">
-        <div class="app-input-box">
+        <div class="col-xs-offset-2 col-xs-8 app-input-box">
             <p>Choose a date</p>
-            <input type="text" uib-datepicker-popup is-open="datepickerOpened" ng-click="datepickerOpened = !datepickerOpened" ng-model="birthDate" ng-required="true" />
+            <input type="text" uib-datepicker-popup is-open="datepickerOpened" ng-click="datepickerOpened = !datepickerOpened" ng-model="date" ng-required="true" />
         </div>
 
-        <div class="app-input-box">
+        <div class="col-xs-offset-2 col-xs-8 app-input-box">
             <p>Choose a time</p>
-            <div uib-timepicker ng-model="mytime" hour-step="1" minute-step="1" />
+            <div uib-timepicker ng-model="$parent.time" hour-step="1" minute-step="5" show-meridian="false" />
         </div>
 
-        <div class="col-xs-offset-2 col-xs-6 app-input-box">
+        <div class="col-xs-offset-2 col-xs-8 app-input-box">
             <p> Start: </p>
-            <input type="text" ng-model="startPoint.place" uib-typeahead="name for point in points | filter:$viewValue | limitTo:5">
+            <input type="text" ng-model="$parent.startPoint" uib-typeahead="point as point.pointName for point in points | filter:$viewValue | limitTo:5">
         </div>
 
-        <div class="col-xs-offset-2 col-xs-6 app-input-box">
+        <div class="col-xs-offset-2 col-xs-8 app-input-box">
             <p> End: </p>
-            <input type="text" ng-model="endPoint.place" uib-typeahead="name for point in points | filter:$viewValue | limitTo:5">
+            <input type="text" ng-model="$parent.endPoint" uib-typeahead="point as point.pointName for point in points | filter:$viewValue | limitTo:5">
         </div>
 
-
-        <div class="col-xs-offset-2 col-xs-6 app-input-box">
-            <p> Count of seats: </p>
-            <input type="number" ng-model="seats" />
-        </div>
-
-        <div class="btn-strip">
+        <div class="btn-strip col-xs-12 text-center">
             <div>
                 <button class="btn btn-app" ng-click="search()">
                     Search  <i class="fa fa-search"></i>

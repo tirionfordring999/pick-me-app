@@ -1,0 +1,56 @@
+﻿.searchresults-page {
+    background-color: #EBEBEB !important;
+    padding: 0 30px;
+    overflow-y: auto;
+
+    .content {
+        padding-top: 30px;
+        height: 100%;
+
+        .ride-item {
+            height: 30%;
+
+            .section {
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                background-color: #FFFFFF;
+                border-radius: 30px;
+                height: 100%;
+                padding: 15px;
+
+                .left-text-header {
+                    color: #707070;
+                    font-family: Tahoma;
+                }
+
+                .btn {
+                }
+
+                .points {
+
+                    .point {
+                        line-height: 25px;
+
+                        i {
+                            color: lawngreen;
+                        }
+
+                        &.highlighted {
+                            font-weight: bold
+                        }
+                    }
+                }
+
+                .info {
+
+                    .price {
+                        height: 50%;
+                    }
+
+                    .driver {
+                        height: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -23,16 +23,13 @@ namespace PickMeApp.Models
         public virtual DbSet<Routes> Routes { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Cars>(entity =>
             {
                 entity.HasKey(e => e.CarId);
 
-                entity.Property(e => e.CarId)
-                    .HasColumnName("carId")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.CarId).HasColumnName("carId");
 
                 entity.Property(e => e.BabySeat).HasColumnName("babySeat");
 
@@ -64,9 +61,7 @@ namespace PickMeApp.Models
             {
                 entity.HasKey(e => e.FeedbackId);
 
-                entity.Property(e => e.FeedbackId)
-                    .HasColumnName("feedbackId")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.FeedbackId).HasColumnName("feedbackId");
 
                 entity.Property(e => e.Feedback)
                     .HasColumnName("feedback")
@@ -88,9 +83,7 @@ namespace PickMeApp.Models
             {
                 entity.HasKey(e => e.PointId);
 
-                entity.Property(e => e.PointId)
-                    .HasColumnName("pointId")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.PointId).HasColumnName("pointId");
 
                 entity.Property(e => e.PointName)
                     .HasColumnName("pointName")
@@ -101,9 +94,7 @@ namespace PickMeApp.Models
             {
                 entity.HasKey(e => e.RoutePointId);
 
-                entity.Property(e => e.RoutePointId)
-                    .HasColumnName("routePointId")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.RoutePointId).HasColumnName("routePointId");
 
                 entity.Property(e => e.PointId).HasColumnName("pointId");
 
@@ -128,9 +119,7 @@ namespace PickMeApp.Models
             {
                 entity.HasKey(e => e.RequestId);
 
-                entity.Property(e => e.RequestId)
-                    .HasColumnName("requestId")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.RequestId).HasColumnName("requestId");
 
                 entity.Property(e => e.EndPoint).HasColumnName("endPoint");
 
@@ -173,9 +162,7 @@ namespace PickMeApp.Models
             {
                 entity.HasKey(e => e.RouteId);
 
-                entity.Property(e => e.RouteId)
-                    .HasColumnName("routeId")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.RouteId).HasColumnName("routeId");
 
                 entity.Property(e => e.CarId).HasColumnName("carId");
 
@@ -190,6 +177,8 @@ namespace PickMeApp.Models
                 entity.Property(e => e.PreferencesAtRide)
                     .HasColumnName("preferencesAtRide")
                     .HasMaxLength(50);
+
+                entity.Property(e => e.TimeOfRoute).HasColumnName("timeOfRoute");
 
                 entity.HasOne(d => d.Car)
                     .WithMany(p => p.Routes)

@@ -5,10 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\assets\sass\images - Копировать\**" />
     <Compile Remove="Новая папка\**" />
+    <Content Remove="wwwroot\assets\sass\images - Копировать\**" />
     <Content Remove="Новая папка\**" />
+    <EmbeddedResource Remove="wwwroot\assets\sass\images - Копировать\**" />
     <EmbeddedResource Remove="Новая папка\**" />
+    <None Remove="wwwroot\assets\sass\images - Копировать\**" />
     <None Remove="Новая папка\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,7 +28,10 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\assets\sass\images\" />
-    <Folder Include="wwwroot\src\directives\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
   </ItemGroup>
 
 </Project>

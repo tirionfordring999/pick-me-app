@@ -5,12 +5,23 @@
 @import "login/_login.scss";
 @import "profile/_profile.scss";
 @import "register/_register.scss";
+@import "search/_search.scss";
+@import "searchresults/_searchresults.scss";
 
 html, body, [ng-view] {
     height: 100%;
     overflow-x: hidden;
     background-color: #EBEBEB;
     font-family: Tahoma;
+}
+
+.empty-modal {
+
+    .modal-content {
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
 }
 
 #pageContent {
@@ -112,6 +123,7 @@ html, body, [ng-view] {
     text-align: left;
 
     input {
+        box-shadow: none;
         font-size: 18px;
         border: none;
         background: transparent;

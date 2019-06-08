@@ -13,7 +13,7 @@
         <button class="icon-button" uib-dropdown-toggle>
             <i class="fas fa-user"></i>
         </button>
-        <ul uib-dropdown-menu class="dropdown-menu padding-0 margin-0">
+        <ul uib-dropdown-menu class="dropdown-menu padding-5 margin-0">
             <li class="padding-5 menu-item pointer" ng-click="openProfile()">
                 Profile
             </li>
@@ -45,13 +45,20 @@
 
 
 <div ng-class="{'open': menuOpened}" class="menu" id="MainMenu">
-    <div class="menu-item">
-        <button class="btn btn-primary nav-button"> Find route </button>
+    <div class="menu-item" ng-click="goTo('search')">
+        <span>Search</span>
+        <button class="icon-button pull-right"><i class="fas fa-arrow-right"></i></button>
     </div>
-    <div class="menu-item">
-        <button class="btn btn-primary nav-button">  Publish a route </button>
+    <div class="menu-item" ng-click="goTo('offer')">
+        <span>Offer</span>
+        <button class="icon-button pull-right"><i class="fas fa-arrow-right"></i></button>
     </div>
-    <div class="menu-item">
-        <button class="btn btn-primary nav-button"> About us </button>
+    <div class="menu-item" ng-click="goTo('myrides')">
+        <span>My rides</span>
+        <button class="icon-button pull-right"><i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="menu-item" ng-click="goTo('myrequests')">
+        <span>My requests</span>
+        <button class="icon-button pull-right"><i class="fas fa-arrow-right"></i></button>
     </div>
 </div>

@@ -27,7 +27,8 @@
             })
             .when('/searchresults', {
                 templateUrl: 'src/searchresults/searchresults.html',
-                controller: 'SearchResultsController'
+                controller: 'SearchResultsController',
+                reloadOnSearch: false
             })
             .otherwise({
                 redirectTo: '/home'

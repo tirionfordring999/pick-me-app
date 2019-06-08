@@ -1,4 +1,4 @@
-.home-page .pictureSection {
+﻿.home-page .pictureSection {
   background: url("/assets/images/fon/bgFon1.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -8,7 +8,7 @@
   padding-top: 20%; }
 
 .home-page .section {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   background-color: #FFF;
   margin: auto; }
@@ -26,7 +26,8 @@
   letter-spacing: 2px;
   font-size: 2.6em;
   font-weight: 100;
-  color: #fff; }
+  color: #fff;
+  text-align: center; }
 
 .home-page .textLogo > h1 > span {
   color: #E55049;
@@ -144,22 +145,33 @@
 
 .menu {
   top: 75px;
-  left: -200px;
+  left: -230px;
   z-index: 3;
   overflow-y: auto;
   height: calc(100% - 75px);
-  width: 200px;
-  background: #FFF;
-  border: 2px solid;
+  width: 230px;
+  background: #EBEBEB;
   position: absolute;
   -webkit-transition: all 0.3s ease-out; }
   .menu.open {
     left: 0px; }
   .menu .menu-item {
-    height: 40px;
-    padding: 5px; }
+    height: 60px;
+    padding: 11px;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid #b6b6b6; }
+    .menu .menu-item .icon-button {
+      background-color: #EBEBEB;
+      color: #b6b6b6; }
     .menu .menu-item:hover {
       background: #e4dcdc; }
+      .menu .menu-item:hover .icon-button {
+        background-color: #e4dcdc; }
+    .menu .menu-item span {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 35px; }
 
 .display-none {
   display: none; }
@@ -593,16 +605,12 @@
     color: #E64E49; }
 
 .profile-page .profile-info {
-  width: 93%;
-  margin: 30px auto;
   background-color: #FFFFFF;
-  border-radius: 30px;
   padding: 15px;
-  height: 90%; }
+  height: 100%; }
   .profile-page .profile-info .profile-header {
     text-align: center;
-    padding-bottom: 25px;
-    height: 15%; }
+    height: 20%; }
     .profile-page .profile-info .profile-header h1 {
       color: #707070;
       font-family: Tahoma; }
@@ -616,8 +624,8 @@
     .profile-page .profile-info .profile-content .photo {
       margin: auto;
       text-align: center;
-      width: 200px;
-      height: 200px;
+      max-width: 200px;
+      max-height: 200px;
       border-radius: 100px;
       background-color: yellow;
       padding: 70px; }
@@ -683,13 +691,62 @@
   .register-page .red-text {
     color: #E64E49; }
 
+.search-page .content-header {
+  text-align: center; }
+  .search-page .content-header h1 {
+    letter-spacing: 2px;
+    font-family: Tahoma;
+    font-size: 32px;
+    font-weight: 100; }
+
+.search-page .content {
+  height: 70%;
+  padding: 20px; }
+  .search-page .content .btn-strip {
+    text-align: center; }
+
+.searchresults-page {
+  background-color: #EBEBEB !important;
+  padding: 0 30px;
+  overflow-y: auto; }
+  .searchresults-page .content {
+    padding-top: 30px;
+    height: 100%; }
+    .searchresults-page .content .ride-item {
+      height: 30%; }
+      .searchresults-page .content .ride-item .section {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-color: #FFFFFF;
+        border-radius: 30px;
+        height: 100%;
+        padding: 15px; }
+        .searchresults-page .content .ride-item .section .left-text-header {
+          color: #707070;
+          font-family: Tahoma; }
+        .searchresults-page .content .ride-item .section .points .point {
+          line-height: 25px; }
+          .searchresults-page .content .ride-item .section .points .point i {
+            color: lawngreen; }
+          .searchresults-page .content .ride-item .section .points .point.highlighted {
+            font-weight: bold; }
+        .searchresults-page .content .ride-item .section .info .price {
+          height: 50%; }
+        .searchresults-page .content .ride-item .section .info .driver {
+          height: 50%; }
+
 html, body, [ng-view] {
   height: 100%;
   overflow-x: hidden;
   background-color: #EBEBEB;
   font-family: Tahoma; }
 
+.empty-modal .modal-content {
+  background: none;
+  border: none;
+  box-shadow: none; }
+
 #pageContent {
+  background: #FFF;
   padding-top: 75px !important;
   height: 100%; }
 
@@ -762,6 +819,7 @@ html, body, [ng-view] {
   margin: 10px;
   text-align: left; }
   .app-input-box input {
+    box-shadow: none;
     font-size: 18px;
     border: none;
     background: transparent;

@@ -30,6 +30,11 @@
                 controller: 'SearchResultsController',
                 reloadOnSearch: false
             })
+            .when('/book', {
+                templateUrl: 'src/book/book.html',
+                controller: 'BookController',
+                reloadOnSearch: false
+            })
             .otherwise({
                 redirectTo: '/home'
             });

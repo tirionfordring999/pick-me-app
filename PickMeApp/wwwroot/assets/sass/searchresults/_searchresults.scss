@@ -1,5 +1,4 @@
 ﻿.searchresults-page {
-    background-color: #EBEBEB !important;
     padding: 0 30px;
     overflow-y: auto;
 
@@ -8,6 +7,7 @@
         height: 100%;
 
         .ride-item {
+            font-size: 18px;
             height: 30%;
 
             .section {
@@ -23,6 +23,7 @@
                 }
 
                 .btn {
+                    margin-top: 50px;
                 }
 
                 .points {

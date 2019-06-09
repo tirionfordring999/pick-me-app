@@ -1,11 +1,78 @@
 ﻿.offer-page {
 
-   .content-header {
-       height: 15%;
-   }
+    .content-header {
+        text-align: center;
 
-   .content {
-       height: 85%;
-       padding: 0 5%;
-   }
+        h1 {
+            letter-spacing: 2px;
+            font-family: Tahoma;
+            font-size: 32px;
+            font-weight: 100;
+        }
+    }
+
+    .content {
+        height: 70%;
+        padding: 20px;
+
+        
+
+        .section {
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            background-color: #FFFFFF;
+            border-radius: 30px;
+            height: 100%;
+            padding: 15px;
+            line-height: 35px;
+
+            .left-text-header {
+                color: #707070;
+                font-family: Tahoma;
+            }
+
+            .btn {
+            }
+
+            .points {
+
+                .point {
+                    line-height: 40px;
+
+                    i {
+                        color: lawngreen;
+                    }
+
+                    &.highlighted {
+                        font-weight: bold
+                    }
+                }
+            }
+
+            .info {
+
+                .price {
+                    height: 50%;
+                }
+
+                .driver {
+                    height: 50%;
+                }
+            }
+        }
+
+        .btn-strip {
+            padding: 30px;
+            text-align: center;
+        }
+    }
+
+    .info {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .red-text {
+        color: #E64E49;
+    }
 }

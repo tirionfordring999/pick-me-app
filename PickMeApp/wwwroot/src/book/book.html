@@ -1,0 +1,58 @@
+﻿<div ng-if="loaded" id="pageContent" class="offer-page">
+    <div ng-show="step === 1">
+        <div class="content-header">
+            <h1>Book a ride</h1>
+        </div>
+        <div class="content">
+            <div class="row section">
+                <div class="col-xs-6">
+                    <h3 class="left-text-header col-xs-12 margin-0">{{ride.startPoint.pointName}} - {{ride.endPoint.pointName}}</h3>
+                    <h4 class="left-text-header col-xs-12 margin-top-0">{{displayDate}}, {{displayTime}}</h4>
+                    <div class="points">
+                        <div ng-repeat="point in ride.points">
+                            <div class="point" ng-class="{'highlight':point.pointId === ride.startPoint.pointId || point.pointId === ride.endPoint.pointId }">
+                                <div class="col-xs-2 padding-0">
+                                    <i ng-if="!(point.pointId === ride.startPoint.pointId || point.pointId === ride.endPoint.pointId)" class="fas fa-ellipsis-v"></i>
+                                    <i ng-if="point.pointId === ride.startPoint.pointId || point.pointId === ride.endPoint.pointId" class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="col-xs-10 padding-0">
+                                    {{point.pointName}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 info">
+                    <div class="col-xs-12 price"> <i class="fas fa-hryvnia"></i> {{ride.price * seats}} </div>
+                    <div class="col-xs-12 app-input-box">
+                        <p>Count of places</p>
+                        <input type="number" ng-model="$parent.seats" min="1" ng-change="seatsChanged()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-strip">
+                <div>
+                    <button class="btn btn-app" ng-click="goToStep2()">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div ng-show="step === 2">
+        <div class="content-header"> <h1> What now?</h1> </div>
+        <div class="content">
+
+            <p class="info"> Wait for driver accept request. Check it on <a class="red-text" href="#!/myrides"> My Requests </a></p>
+        </div>
+        
+    </div>
+</div>
+
+<div ng-if="!loaded" class="preloader">
+    <object type="image/svg+xml"
+            data="assets/preloader.svg">
+    </object>
+</div>

@@ -2,12 +2,17 @@
     $scope.loaded = false;
     $scope.user = {};
 
+
+
     function init() {
 
         var date = $routeParams['date'];
         var time = $routeParams['time'];
         var endPointId = $routeParams['end'];
         var startPointId = $routeParams['start'];
+
+        $scope.end = $routeParams['end'];
+        $scope.start = $routeParams['start'];
 
         $location.search('date', null);
         $location.search('time', null);
@@ -41,6 +46,15 @@
         
     }
     init();
+
+    $scope.book = function (id) {
+        $location.path("/book").
+            search({
+                end: $scope.end,
+                start: $scope.start,
+                id
+            });
+    }
 
     $scope.calculateAge = function (birthday) {
         var ageDifMs = Date.now() - birthday.getTime();

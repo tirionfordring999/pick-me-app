@@ -706,13 +706,13 @@
     text-align: center; }
 
 .searchresults-page {
-  background-color: #EBEBEB !important;
   padding: 0 30px;
   overflow-y: auto; }
   .searchresults-page .content {
     padding-top: 30px;
     height: 100%; }
     .searchresults-page .content .ride-item {
+      font-size: 18px;
       height: 30%; }
       .searchresults-page .content .ride-item .section {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -723,6 +723,8 @@
         .searchresults-page .content .ride-item .section .left-text-header {
           color: #707070;
           font-family: Tahoma; }
+        .searchresults-page .content .ride-item .section .btn {
+          margin-top: 50px; }
         .searchresults-page .content .ride-item .section .points .point {
           line-height: 25px; }
           .searchresults-page .content .ride-item .section .points .point i {
@@ -733,6 +735,49 @@
           height: 50%; }
         .searchresults-page .content .ride-item .section .info .driver {
           height: 50%; }
+
+.offer-page .content-header {
+  text-align: center; }
+  .offer-page .content-header h1 {
+    letter-spacing: 2px;
+    font-family: Tahoma;
+    font-size: 32px;
+    font-weight: 100; }
+
+.offer-page .content {
+  height: 70%;
+  padding: 20px; }
+  .offer-page .content .section {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    height: 100%;
+    padding: 15px;
+    line-height: 35px; }
+    .offer-page .content .section .left-text-header {
+      color: #707070;
+      font-family: Tahoma; }
+    .offer-page .content .section .points .point {
+      line-height: 40px; }
+      .offer-page .content .section .points .point i {
+        color: lawngreen; }
+      .offer-page .content .section .points .point.highlighted {
+        font-weight: bold; }
+    .offer-page .content .section .info .price {
+      height: 50%; }
+    .offer-page .content .section .info .driver {
+      height: 50%; }
+  .offer-page .content .btn-strip {
+    padding: 30px;
+    text-align: center; }
+
+.offer-page .info {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold; }
+
+.offer-page .red-text {
+  color: #E64E49; }
 
 html, body, [ng-view] {
   height: 100%;

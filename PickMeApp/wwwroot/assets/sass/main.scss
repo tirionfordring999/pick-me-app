@@ -8,6 +8,8 @@
 @import "search/_search.scss";
 @import "searchresults/_searchresults.scss";
 @import "offer/_offer.scss";
+@import "ride/_ride.scss";
+@import "request/_request.scss";
 
 html, body, [ng-view] {
     height: 100%;

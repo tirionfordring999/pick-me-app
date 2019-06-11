@@ -1,4 +1,4 @@
-﻿angular.module('pick-me-app').controller('ProfileController', ['$scope', 'ProfileService', '$location', '$cookies', '$timeout', function ($scope, ProfileService, $location, $cookies, $timeout) {
+﻿angular.module('pick-me-app').controller('RequestController', ['$scope', 'ProfileService', '$location', '$cookies', '$timeout', function ($scope, ProfileService, $location, $cookies, $timeout) {
     $scope.loaded = false;
     $scope.user = {};
 

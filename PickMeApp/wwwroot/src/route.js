@@ -35,6 +35,14 @@
                 controller: 'BookController',
                 reloadOnSearch: false
             })
+            .when('/ride', {
+                templateUrl: 'src/ride/ride.html',
+                controller: 'RideController'
+            })
+            .when('/request', {
+                templateUrl: 'src/request/request.html',
+                controller: 'RequestController'
+            })
             .otherwise({
                 redirectTo: '/home'
             });

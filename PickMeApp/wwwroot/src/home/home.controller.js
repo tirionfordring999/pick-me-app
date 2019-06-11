@@ -5,4 +5,8 @@
         $anchorScroll();
     }
 
+    $scope.goTo = function (link) {
+        $location.path('/' + link);
+    }
+
 }]);

@@ -14,17 +14,19 @@
                 <div uib-timepicker ng-model="$parent.time" hour-step="1" minute-step="5" show-meridian="false" />
             </div>
 
+            <div class="col-xs-offset-2 col-xs-8 app-input-box">
+                <p>Number of seats</p>
+                    <input type="number" ng-model="$parent.numberOfSeats">
+            </div>
+
             <div ng-if="cars && cars.length !== 0" class="col-xs-offset-2 col-xs-8 app-input-box">
                 <p>Pick you car</p>
                 <input uib-timepicker ng-model="$parent.time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" />
             </div>
-
-            <div class="btn-strip">
-                <div>
-                    <button class="btn btn-app" ng-click="goToStep2()">
-                        Next <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
+            <div class="col-xs-12 text-center">
+                <button class="btn btn-app" ng-click="goToStep2()">
+                    Next <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -49,12 +51,11 @@
                     <input type="number" ng-model="routePoint.price">
                 </div>
             </div>
-            <div class="btn-strip">
+            <div class="col-xs-12 text-center">
                 <button class="btn btn-app" ng-click="goToStep3()">
                     Next <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
-
         </div>
     </div>
     <div ng-show="step === 3">

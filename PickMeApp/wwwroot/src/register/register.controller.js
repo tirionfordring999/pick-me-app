@@ -1,4 +1,4 @@
-﻿angular.module('pick-me-app').controller('RegisterController', ['$scope', 'AuthService', function ($scope, AuthService) {
+﻿angular.module('pick-me-app').controller('RegisterController', ['$scope', 'AuthService', '$location', function ($scope, AuthService, $location) {
     $scope.step = 1;
     $scope.username = 'aaaa';
     $scope.password = '';
@@ -38,17 +38,18 @@
 
     $scope.goToStep3 = function () {
 
-        if ($scope.fullName !== '' && $scope.birthDate !== '') {
+        if ($scope.fullName !== '' && $scope.birthDate !== '' && phoneIsValid()) {
             AuthService.Register(
                 {
                     Login: $scope.username,
                     Password: $scope.password,
                     BirthDate: $scope.birthDate,
-                    FullName: $scope.fullName
+                    FullName: $scope.fullName,
+                    PhoneNumber: $scope.phone
                 }
             ).then(function (data) {
                 if (data.success) {
-                    $location.path('#!/login');
+                    $location.path('/login');
                 }
             });
         }
@@ -57,6 +58,10 @@
             return;
         }
 
+    }
+
+    function phoneIsValid() {
+        return $scope.phone !== '';
     }
 
 }]);

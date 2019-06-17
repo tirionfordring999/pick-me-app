@@ -7,6 +7,8 @@
         {}
     ];
 
+    $scope.numberOfSeats = 1;
+
     $scope.addPoint = function () {
         $scope.routePoints.push({});
     }
@@ -18,7 +20,7 @@
 
     $scope.date = new Date();
 
-    $scope.time = new Date();
+    $scope.time = 0;
 
     $scope.step = 1;
 
@@ -37,7 +39,8 @@
         OfferService.SaveRide({
             date: $scope.date,
             time: $scope.time,
-            points: $scope.routePoints
+            points: $scope.routePoints,
+            seats: $scope.numberOfSeats
         }).then(function (data) {
             loading.dismiss();
             $scope.step++;

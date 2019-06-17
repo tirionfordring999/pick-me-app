@@ -1,8 +1,12 @@
 ﻿<div ng-if="loaded" id="pageContent" class="searchresults-page">
     <div class="content">
         <div ng-if="rides.length === 0 ">
-            Sorry, but there are no rides for current search,
-            try change place or time 
+            <h3 class="text-center">
+               Sorry, but there are no rides for you
+            </h3>
+            <h4 class="text-center">
+               Back to <a class="red-text" href="#!/search">search</a>
+            </h4>
         </div>
         <div ng-repeat="ride in rides" class="ride-item margin-top-20">
             <div class="row section">
@@ -30,9 +34,11 @@
                     <div class="col-xs-12 driver"> {{ride.driver.firstName}}, {{calculateAge(ride.driver.birthDate)}} </div>
 
                 </div>
-                <button class="col-xs-4 btn btn-app pull-right" ng-click="book(ride.routeId)">
-                    Book <i class="fas fa-arrow-right"></i>
-                </button>
+                <div class="col-xs-12">
+                    <button class="col-xs-4 btn btn-app pull-right" ng-click="book(ride.routeId)">
+                        Book <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
            
         </div>

@@ -1,11 +1,59 @@
 ﻿<div ng-if="loaded" id="pageContent" class="ride-page">
-    <div class="ride-info">
-
+    <div class="content">
+        <div class="col-xs-12" ng-if="routes.length === 0">
+            <h3 class="text-center">
+                You have no rides published
+            </h3>
+            <h4 class="text-center">
+                You can publish a ride on <a class="red-text" href="#!/search">search</a> page
+            </h4>
+        </div>
+        <div class="ride-item" ng-repeat="ride in routes">
+            <div class="col-xs-12 section row">
+                <h3 class="left-text-header col-xs-12 margin-0">{{ride.points[0].pointName}} - {{ride.points[ride.points.length-1].pointName}}</h3>
+                <h4 class="left-text-header col-xs-12 margin-top-0">{{showDate(ride.date)}}, {{showTime(ride.time)}}</h4>
+                <div class="points col-xs-12">
+                    <div ng-repeat="point in ride.points track by $index" class="point col-xs-12 padding-0" ng-class="{'highlight': $index === 0  || $index === ride.points.length - 1  }">
+                        <div class="col-xs-2 padding-0">
+                            <i ng-if="!($index === 0  || $index === ride.points.length - 1)" class="fas fa-ellipsis-v"></i>
+                            <i ng-if="$index === 0  || $index === ride.points.length - 1" class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="col-xs-6 padding-0">
+                            {{point.pointName}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 request margin-top-5 padding-0" ng-repeat="request in ride.requests">
+                    <div class="col-sm-9 col-xs-12 padding-0">
+                        <div class="col-sm-4 col-xs-12">
+                            {{request.user.firstName}}, {{calculateAge(request.user.birthDate)}}
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            {{request.startPoint.pointName}} - {{request.endPoint.pointName}}
+                        </div>
+                        <div class="col-sm-2 col-xs-2">
+                            <i class="fas fa-user"></i>{{request.numberOfSeats}}
+                        </div>
+                        <div class="col-sm-2 col-xs-2">
+                            {{request.price * request.numberOfSeats}}
+                        </div>
+                    </div>
+                    <div class="request-page col-xs-12 col-sm-3 padding-0">
+                        <button ng-if="request.status === 0" class="btn btn-app" ng-click="acceptRequest(request.requestId)">
+                            Accept <i class="fas fa-check"></i>
+                        </button>
+                        <div ng-if="request.status === 1" class="alert alert-success padding-0 margin-0 text-center accepted"  role="alert">
+                            {{request.user.phone}} <i class="fas fa-phone"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 
 <div ng-if="!loaded" class="preloader">
     <object type="image/svg+xml"
-            data="assets/preloader.svg">
-    </object>
+            data="assets/preloader.svg"></object>
 </div>

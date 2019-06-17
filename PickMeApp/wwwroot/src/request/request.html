@@ -1,8 +1,61 @@
 ﻿<div ng-if="loaded" id="pageContent" class="request-page">
-    <div class="request-info">
-    </div>
     <div class="content">
+        <div class="col-xs-12" ng-if="requests.length === 0">
+            <h3 class="text-center">
+                You have no ride requests
+            </h3>
+            <h4 class="text-center">
+                You can request a ride on <a class="red-text" href="#!/search">search</a> page
+            </h4>
+        </div>
+        <div class="ride-item" ng-repeat="request in requests">
+            <div class="section row">
+                <div class="col-xs-12 padding-0">
+                    <div class="col-xs-12">
+                        <h3 class="left-text-header col-xs-12 margin-0">{{request.startPoint.pointName}} - {{request.endPoint.pointName}}</h3>
+                        <h4 class="left-text-header col-xs-12 margin-top-0">{{showDate(request.date)}}, {{showTime(request.time)}}</h4>
+                    </div>
+                    <div class="col-xs-6 points">
+                        <div ng-repeat="point in request.points track by $index" class="point col-xs-12 padding-0" ng-class="{'highlight': point.pointId === request.startPoint.pointId || point.pointId === request.endPoint.pointId }">
+                            <div class="col-xs-2 padding-0">
+                                <i ng-if="!(point.pointId === request.startPoint.pointId || point.pointId === request.endPoint.pointId)" class="fas fa-ellipsis-v"></i>
+                                <i ng-if="point.pointId === request.startPoint.pointId || point.pointId === request.endPoint.pointId" class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="col-xs-6 padding-0">
+                                {{point.pointName}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="col-xs-12">
+                            <div>
+                                <i class="fas fa-user"></i>{{request.numberOfSeats}}
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div>
+                                <i class="fas fa-hryvnia"></i> {{request.price * request.numberOfSeats}}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 driver"> {{request.driver.firstName}}, {{calculateAge(request.driver.birthDate)}} </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="margin-top-10 padding-top-15 alert alert-warning" ng-if="request.status === 0">
+                            Wait for driver accept a request
+                        </div>
+                        <div class="margin-top-10 padding-top-15 alert alert-success" ng-if="request.status === 1">
+                            Call your driver: {{request.driver.phone}}
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <button class="btn btn-danger pull-right" ng-click="deleteRequest(request.requestId)">
+                            Cancel request <i class="fas fa-times"></i>
+                        </button>
+                    </div>
 
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

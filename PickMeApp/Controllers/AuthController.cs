@@ -21,7 +21,11 @@ namespace PickMeApp.Controllers
         public IActionResult Login([FromBody]LoginViewModel vm)
         {
             var token = db.Users.Where(u => u.Login == vm.Login && u.Pass == vm.Pass).Select(u => u.UserId).FirstOrDefault();
-            return Json(new { token = token });
+            if (token != 0)
+            {
+                return Json(new { token = token });
+            }
+            return new UnauthorizedResult();
         }
 
         [HttpPost("ValidateLogin")]
@@ -45,9 +49,10 @@ namespace PickMeApp.Controllers
             user.BirthDate = vm.BirthDate;
             user.Pass = vm.Password;
             user.FirstName = vm.FullName;
+            user.Phone = vm.PhoneNubmer;
             db.Users.Add(user);
             db.Entry(user).State = Microsoft.EntityFrameworkCore.EntityState.Added;
-            db.SaveChangesAsync();
+            db.SaveChanges();
             return Json(new { success = true });
         }
     }
@@ -58,6 +63,7 @@ namespace PickMeApp.Controllers
         public string Password { get; set; }
         public DateTime BirthDate { get; set; }
         public string FullName { get; set; }
+        public string PhoneNubmer { get; set; }
     }
 
     public class ValidateViewModel

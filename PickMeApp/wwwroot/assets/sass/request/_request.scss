@@ -8,7 +8,6 @@
 
         .ride-item {
             font-size: 18px;
-            height: 30%;
 
             .section {
                 box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -16,14 +15,11 @@
                 border-radius: 30px;
                 height: 100%;
                 padding: 15px;
+                margin-bottom: 20px;
 
                 .left-text-header {
                     color: #707070;
                     font-family: Tahoma;
-                }
-
-                .btn {
-                    margin-top: 50px;
                 }
 
                 .points {

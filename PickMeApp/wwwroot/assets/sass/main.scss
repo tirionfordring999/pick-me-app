@@ -42,7 +42,6 @@ html, body, [ng-view] {
     &.btn-app {
         height: 40px;
         border: none;
-        width: 200px;
         border-radius: 30px;
         background: linear-gradient(to bottom left, #E55049, #E57F49);
         color: #fff;
@@ -88,6 +87,10 @@ html, body, [ng-view] {
     }
 
     transition: opacity ease-in-out 0.2s;
+}
+
+.red-text {
+    color: #E64E49;
 }
 
 .app-text-box {
@@ -154,4 +157,8 @@ html, body, [ng-view] {
 
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
 }

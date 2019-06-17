@@ -41,6 +41,7 @@ namespace PickMeApp.Controllers
             var rides = db.Routes.Where(r =>
                 r.RoutePoints.Any(srp => (srp.PointId == vm.start) &&
                 (r.RoutePoints.Where(erp => erp.PointId == vm.end).FirstOrDefault().PointOrder > srp.PointOrder)))
+                .Where(r => r.RouteRequest.Count( rr => rr.UserId == user.UserId) == 0)
                 .Select(
                 s => new
                 {
@@ -56,7 +57,8 @@ namespace PickMeApp.Controllers
                     endPoint = s.RoutePoints.Where(ep => ep.PointId == vm.end).Select(rp => new { rp.PointId, rp.Point.PointName, rp.RoutePointId, rp.PointOrder, rp.Price }).FirstOrDefault(),
                     Price = s.RoutePoints.FirstOrDefault(ep => ep.PointId == vm.end).Price - s.RoutePoints.FirstOrDefault(sp => sp.PointId == vm.start).Price
 
-                }).ToList();
+                })
+                .Where(r => r.SeatsBooked < r.NumberOfSeats).ToList();
 
             return Json(new { rides = rides });
         }
@@ -152,7 +154,102 @@ namespace PickMeApp.Controllers
             
             return Json(new { message = "Success" });
         }
+
+        [HttpGet("GetRequests")]
+        public IActionResult GetRequests()
+        {
+            var user = GetUser();
+            if (user == null)
+            {
+                return new UnauthorizedResult();
+            }
+
+            var requests = db.RouteRequest.Where(w => w.UserId == user.UserId).Select(s => new {
+                    requestId = s.RequestId,
+                    date = s.Route.DateOfRoute,
+                    time = s.Route.TimeOfRoute,
+                    driver = s.Route.Driver,
+                    points = s.Route.RoutePoints.Select(rp => new { rp.PointId, rp.Point.PointName, rp.RoutePointId, rp.PointOrder, rp.Price }).OrderBy(o => o.PointOrder),
+                    car = s.Route.Car,
+                    numberOfSeats = s.NumberOfSeats,
+                    startPoint = s.StartPointNavigation.Point,
+                    endPoint = s.EndPointNavigation.Point,
+                    price = s.EndPointNavigation.Price - s.StartPointNavigation.Price,
+                    notes = s.Notes,
+                    status = s.Status,
+               });
+
+            return Json(new { requests });
+        }
+
+        [HttpGet("GetRides")]
+        public IActionResult GetRides()
+        {
+            var user = GetUser();
+            if (user == null)
+            {
+                return new UnauthorizedResult();
+            }
+
+            var routes = db.Routes.Where(w => w.DriverId == user.UserId).Select(s => new {
+                routeId = s.RouteId,
+                date = s.DateOfRoute,
+                time = s.TimeOfRoute,
+                driver = s.Driver,
+                points = s.RoutePoints.Select(rp => new { rp.PointId, rp.Point.PointName, rp.RoutePointId, rp.PointOrder, rp.Price }).OrderBy(o => o.PointOrder),
+                car = s.Car,
+                numberOfSeats = s.NumberOfSeats,
+                requests = s.RouteRequest.Select(rr => new {
+                    user = rr.User,
+                    requestId = rr.RequestId,
+                    car = rr.Route.Car,
+                    numberOfSeats = rr.NumberOfSeats,
+                    startPoint = rr.StartPointNavigation.Point,
+                    endPoint = rr.EndPointNavigation.Point,
+                    price = rr.EndPointNavigation.Price - rr.StartPointNavigation.Price,
+                    notes = rr.Notes,
+                    status = rr.Status
+                })
+            });
+
+            return Json(new { routes });
+        }
+
+        [HttpPost("AcceptRequest")]
+        public IActionResult AcceptRequest([FromBody] AcceptRequestViewModel vm)
+        {
+            var user = GetUser();
+            if (user == null)
+            {
+                return new UnauthorizedResult();
+            }
+
+            var request = db.RouteRequest.FirstOrDefault(rr => rr.RequestId == vm.RequestId);
+            request.Status = 1;
+            db.Entry(request).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return Json(new { message = "Success" });
+        }
+
+        [HttpPost("CancelRequest")]
+        public IActionResult CancelRequest([FromBody] CancelRequestViewModel vm)
+        {
+            var user = GetUser();
+            if (user == null)
+            {
+                return new UnauthorizedResult();
+            }
+
+            var request = db.RouteRequest.FirstOrDefault(rr => rr.RequestId == vm.RequestId);
+            db.Entry(request).State = EntityState.Deleted;
+            db.SaveChanges();
+
+            return Json(new { message = "Success" });
+        }
+
     }
+
 
     public class BookViewModel
     {
@@ -168,6 +265,16 @@ namespace PickMeApp.Controllers
         public int start { get; set; }
         public int end { get; set; }
         public int id { get; set; }
+    }
+
+    public class AcceptRequestViewModel
+    {
+        public int RequestId { get; set; }
+    }
+
+    public class CancelRequestViewModel
+    {
+        public int RequestId { get; set; }
     }
 
     public class SaveRideViewModel

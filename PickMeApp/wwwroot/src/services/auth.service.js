@@ -1,4 +1,4 @@
-﻿angular.module('pick-me-app').factory('AuthService', ['$http', function ($http) {
+﻿angular.module('pick-me-app').factory('AuthService', ['$http', 'FlashService', function ($http, FlashService) {
 
     var service = {};
 
@@ -24,7 +24,8 @@
     }
 
     function handleError(response) {
-       console.log(response.error);
+        console.log(response.error);
+        FlashService.Error('Authentification error');
     }
     return service;
 

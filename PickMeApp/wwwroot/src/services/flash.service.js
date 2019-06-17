@@ -11,7 +11,8 @@
     }
 
     service.Error = function (message) {
-        return $uibModal.open(message);
+        return $uibModal.open({
+            template: '<div class="alert alert-danger margin-0" role="alert">' + message  +'</div>'});
     }
 
     return service;

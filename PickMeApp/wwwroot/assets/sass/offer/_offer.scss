@@ -15,7 +15,7 @@
         height: 70%;
         padding: 20px;
 
-        
+
 
         .section {
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -74,5 +74,12 @@
 
     .red-text {
         color: #E64E49;
+    }
+
+    .price-box{
+
+        input {
+            padding: 0 2px;
+        }
     }
 }

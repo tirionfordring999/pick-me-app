@@ -49,7 +49,7 @@ namespace PickMeApp.Controllers
             user.BirthDate = vm.BirthDate;
             user.Pass = vm.Password;
             user.FirstName = vm.FullName;
-            user.Phone = vm.PhoneNubmer;
+            user.Phone = vm.PhoneNumber;
             db.Users.Add(user);
             db.Entry(user).State = Microsoft.EntityFrameworkCore.EntityState.Added;
             db.SaveChanges();
@@ -63,7 +63,7 @@ namespace PickMeApp.Controllers
         public string Password { get; set; }
         public DateTime BirthDate { get; set; }
         public string FullName { get; set; }
-        public string PhoneNubmer { get; set; }
+        public string PhoneNumber { get; set; }
     }
 
     public class ValidateViewModel

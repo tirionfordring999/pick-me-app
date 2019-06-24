@@ -5,7 +5,7 @@
   -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
-  padding-top: 20%; }
+  padding-top: 20vh; }
 
 .home-page .section {
   min-height: 100%;
@@ -776,6 +776,9 @@
 
 .offer-page .red-text {
   color: #E64E49; }
+
+.offer-page .price-box input {
+  padding: 0 2px; }
 
 .ride-page {
   padding: 0 30px;

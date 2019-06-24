@@ -46,7 +46,7 @@
                     <p> Place </p>
                     <input type="text" ng-model="routePoint.point" uib-typeahead="point as point.pointName for point in points | filter:$viewValue | limitTo:5">
                 </div>
-                <div ng-if="$index !== 0" class="col-xs-2 app-input-box">
+                <div ng-if="$index !== 0" class="col-xs-2 app-input-box price-box padding-0">
                     <p>Price</p>
                     <input type="number" ng-model="routePoint.price">
                 </div>
